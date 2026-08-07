@@ -5,9 +5,12 @@ import { useState } from "react";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   async function handleLogin() {
     try {
+      setLoading(true);
+
       const res = await fetch("/api/login", {
         method: "POST",
         headers: {
@@ -22,20 +25,23 @@ export default function LoginPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        alert(data.message);
+        alert(data.message || "Login Failed");
         return;
       }
+
+      // Save login
+      localStorage.setItem("user", JSON.stringify(data.user));
       document.cookie = "isLoggedIn=true; path=/";
-      window.location.href = "/dashboard";
 
       alert("Login Success ✅");
 
-      localStorage.setItem("user", JSON.stringify(data.user));
-
+      // Redirect
       window.location.href = "/dashboard";
     } catch (error) {
-      console.log(error);
+      console.error(error);
       alert("Something went wrong");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -94,6 +100,7 @@ export default function LoginPage() {
 
         <button
           onClick={handleLogin}
+          disabled={loading}
           style={{
             width: "100%",
             padding: "12px",
@@ -107,7 +114,7 @@ export default function LoginPage() {
             fontSize: "16px",
           }}
         >
-          Login
+          {loading ? "Logging in..." : "Login"}
         </button>
       </div>
     </div>
