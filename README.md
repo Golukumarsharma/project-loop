@@ -1,36 +1,182 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LOOP - Feedback Management System
 
-## Getting Started
+## 📌 Project Overview
 
-First, run the development server:
+LOOP is a Feedback Management System developed using Next.js, Prisma, PostgreSQL (Neon Database), and TypeScript.
+
+This project allows users to manage feedback efficiently with analytics, reports, members management, and secure login.
+
+---
+
+# 🚀 Technologies Used
+
+- Next.js 16
+- React 19
+- TypeScript
+- Prisma ORM
+- PostgreSQL (Neon Database)
+- Recharts
+- React Hot Toast
+- Lucide React
+
+---
+
+# ✨ Features
+
+## Authentication
+
+- User Login
+- Route Protection
+- Logout
+
+## Dashboard
+
+- Total Feedback Count
+- New Feedback Count
+- In Progress Count
+- Resolved Count
+- Recent Feedback
+- Pie Chart
+- Bar Chart
+- Export CSV
+
+## Feedback Module
+
+- Add Feedback
+- Edit Feedback
+- Delete Feedback
+- Update Status
+- Search Feedback
+
+## Members Module
+
+- Add Member
+- Delete Member
+- Search Member
+
+## Analytics
+
+- Feedback Statistics
+- Charts
+- Summary
+
+## Reports
+
+- View Reports
+- Export CSV
+
+## Settings
+
+- Update Profile Information
+
+---
+
+# 📂 Project Structure
+
+```
+app/
+components/
+lib/
+prisma/
+public/
+README.md
+package.json
+```
+
+---
+
+# Database
+
+Database Used:
+
+PostgreSQL (Neon)
+
+ORM:
+
+Prisma
+
+---
+
+# Installation
+
+Clone Repository
+
+```bash
+git clone <repository-url>
+```
+
+Install Packages
+
+```bash
+npm install
+```
+
+Generate Prisma Client
+
+```bash
+npx prisma generate
+```
+
+Run Project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create `.env`
 
-## Learn More
+```env
+DATABASE_URL="Your Neon Database URL"
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Default Login
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Email
 
-## Deploy on Vercel
+```
+Admin User Email
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Password
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+Admin Password
+```
+
+---
+
+# Developed By
+
+**Golu Kumar Sharma**
+
+B.Tech Computer Science Engineering
+
+Subharti Institute of Technology and Engineering
+
+---
+
+# Project Status
+
+✅ Completed
+
+---
+
+# Future Improvements
+
+- Email Notifications
+- File Attachments
+- Dark Mode
+- Role Based Access
+- Advanced Reports
+
+---
+
+# License
+
+This project is developed for educational purposes.
